@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --todays-date: '';
+  --date-spacing: 4.5px;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#projects {
+  @apply !transition-height !duration-300;
+}
+
+@layer components {
+  .btn-focus {
+    @apply !transition duration-200 focus:outline-none focus-visible:ring-2;
+  }
+
+  .btn-today::before {
+    counter-reset: todays-date var(--todays-date);
+    content: counter(todays-date) !important;
+    transform: translate(var(--date-spacing), 3px) !important;
+  }
+}
