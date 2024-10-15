@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { doc, onSnapshot } from 'firebase/firestore';
-import {Toggle} from './jsx/fram';
+
 import { Navbar, Sidebar, Content, Modal } from './components';
 import { ContentContext, ModalContext, SidebarContext } from './context';
 import { useLocalStorage as useStore, useSignInWithFirebase } from './hooks';
@@ -363,7 +363,7 @@ export function App(): JSX.Element {
 
   return (
     <>
-    <Toggle />
+    
       <Navbar
         isSignedIn={isSignedIn}
         addTask={addTask}
